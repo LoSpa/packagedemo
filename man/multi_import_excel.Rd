@@ -16,5 +16,5 @@ une liste
 Lire les onglets d'un fichier excel
 }
 \examples{
- multi_import_excel(file = "Inst/extdata/datasets.xlsx")
+
 }

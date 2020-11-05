@@ -15,5 +15,22 @@ knitr::opts_chunk$set(
 ```
 
 ```{r setup}
-library(laurentspanu)
+#library(laurentspanu)
 ```
+
+
+# Fonction A
+
+## IMC
+La fonction doit prendre 2 paramètres, la masse en kg et la taille en mètre. Elle retourne le résultat de l’opération 
+```{r}
+
+#imc(masse = 80, taille = 1.80)
+
+
+
+```
+
+# Fonction B
+
+## 

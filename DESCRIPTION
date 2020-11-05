@@ -6,20 +6,23 @@ Authors@R:
            family = "Spanu",
            role = c("aut", "cre"),
            email = "l.spanu@issep.be")
-Description: Le package est l'examen de certification et contient deux fonctions :
-    Une fonction A et une fonction B. La fonction A permet le calcul du IMC et
-    la fonction B permet de charger un fichier .xlsx et de lire les onglets
+Description: Le package est l'examen de certification et
+    contient deux fonctions : Une fonction A et une fonction B. La
+    fonction A permet le calcul du IMC et la fonction B permet de charger
+    un fichier .xlsx et de lire les onglets
 License: GPL-3
+Imports: 
+    assertthat,
+    readxl,
+    usethis,
+    purrr,
+    dplyr,
+    rmarkdown
+Suggests: 
+    knitr
+VignetteBuilder: 
+    knitr
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.1
-Suggests: 
-    knitr,
-    rmarkdown
-VignetteBuilder: knitr
-Imports: 
-    assertthat,
-    readxl,
-    purrr,
-    dplyr

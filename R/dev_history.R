@@ -15,4 +15,6 @@ usethis::use_package("assertthat")
 usethis::use_package("readxl")
 usethis::use_package("purrr")
 usethis::use_package("dplyr")
+usethis::use_package("rmarkdown")
+
 

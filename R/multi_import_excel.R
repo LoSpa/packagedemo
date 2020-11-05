@@ -6,10 +6,9 @@
 #'
 #' @return une liste
 #' @export
-#' @import assertthat
-#' @import readxl
+#' @import assertthat readxl
 #' @examples
-#'  multi_import_excel(file = "Inst/extdata/datasets.xlsx")
+#'
 multi_import_excel <-  function(file) {
 
 assert_that(is.character(file))
