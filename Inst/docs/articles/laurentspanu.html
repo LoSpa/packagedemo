@@ -118,11 +118,17 @@
 <h2 class="hasAnchor">
 <a href="#multi_import_excel" class="anchor"></a><code>multi_import_excel()</code>
 </h2>
-<p>Une fonction qui prend en paramètre un seul fichier de format ‘xlsx’ et retourne un objet de format list contenant les différents tableaux de chacun des onglets du fichier</p>
+<p>Une fonction qui prend en paramètre un seul fichier de format ‘xlsx’ et retourne un objet de format list contenant les différents tableaux de chacun des onglets du fichier.<br>
+La fonction est résistante aux onglets corrompus d’un fichier excel via un <code>safely()</code> au sein de la fonction.<br>
+De ce fait la sortie de la fonction est une liste constituée des éléments <code>data</code> et <code>error</code>.<br>
+Pour accéder aux données, choisir l’élément <code>data</code>.</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R">
- <span class="fu"><a href="../reference/multi_import_excel.html">multi_import_excel</a></span><span class="op">(</span>file <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html">system.file</a></span><span class="op">(</span><span class="st">"extdata"</span>,<span class="st">"datasets.xlsx"</span>,package <span class="op">=</span> <span class="st">"laurentspanu"</span><span class="op">)</span><span class="op">)</span> <span class="op">%&gt;%</span> 
-   <span class="fu">map</span><span class="op">(</span><span class="va">dim</span><span class="op">)</span>
+<span class="va">tmp</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/multi_import_excel.html">multi_import_excel</a></span><span class="op">(</span>file <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html">system.file</a></span><span class="op">(</span><span class="st">"extdata"</span>,<span class="st">"datasets.xlsx"</span>,package <span class="op">=</span> <span class="st">"laurentspanu"</span><span class="op">)</span><span class="op">)</span>
+
+<span class="va">df</span> <span class="op">&lt;-</span> <span class="va">tmp</span><span class="op">$</span><span class="va">data</span>  <span class="op">%&gt;%</span> <span class="fu">map</span><span class="op">(</span><span class="va">dim</span><span class="op">)</span>
+
+<span class="va">df</span>
 <span class="co">#&gt; $diamant</span>
 <span class="co">#&gt; [1] 50 10</span>
 <span class="co">#&gt; </span>

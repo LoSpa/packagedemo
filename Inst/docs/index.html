@@ -77,37 +77,78 @@
 <div id="laurentspanu" class="section level1">
 <div class="page-header"><h1 class="hasAnchor">
 <a href="#laurentspanu" class="anchor"></a>laurentspanu</h1></div>
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">laurentspanu</span><span class="op">)</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="http://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span>
+<span class="co">#&gt; -- Attaching packages ------------------------------------------------------------------------------------------------------------------------------ tidyverse 1.3.0 --</span>
+<span class="co">#&gt; v ggplot2 3.3.2     v purrr   0.3.4</span>
+<span class="co">#&gt; v tibble  3.0.3     v dplyr   1.0.2</span>
+<span class="co">#&gt; v tidyr   1.1.2     v stringr 1.4.0</span>
+<span class="co">#&gt; v readr   1.3.1     v forcats 0.5.0</span>
+<span class="co">#&gt; -- Conflicts --------------------------------------------------------------------------------------------------------------------------------- tidyverse_conflicts() --</span>
+<span class="co">#&gt; x dplyr::filter() masks stats::filter()</span>
+<span class="co">#&gt; x dplyr::lag()    masks stats::lag()</span></code></pre></div>
 <!-- badges: start -->
 <!-- badges: end -->
-<p>The goal of laurentspanu is to …</p>
-<div id="installation" class="section level2">
+<p>Le but de {laurentspanu} est de …</p>
+<div id="exemple" class="section level2">
 <h2 class="hasAnchor">
-<a href="#installation" class="anchor"></a>Installation</h2>
-<p>You can install the released version of laurentspanu from <a href="https://CRAN.R-project.org">CRAN</a> with:</p>
-<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="st">"laurentspanu"</span><span class="op">)</span></code></pre></div>
+<a href="#exemple" class="anchor"></a>Exemple</h2>
+<p>Ce package propose deux fonctions :</p>
+<ul>
+<li><code><a href="reference/imc.html">imc()</a></code></li>
+<li><code><a href="reference/multi_import_excel.html">multi_import_excel()</a></code></li>
+</ul>
 </div>
-<div id="example" class="section level2">
+<div id="imc" class="section level2">
 <h2 class="hasAnchor">
-<a href="#example" class="anchor"></a>Example</h2>
-<p>This is a basic example which shows you how to solve a common problem:</p>
+<a href="#imc" class="anchor"></a><code>imc()</code>
+</h2>
+<p>Fonction qui a pour but de calculer l’IMC qui correspond à une valeur numérique.</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">laurentspanu</span><span class="op">)</span>
-<span class="co">## basic example code</span></code></pre></div>
-<p>What is special about using <code>README.Rmd</code> instead of just <code>README.md</code>? You can include R chunks like so:</p>
+<code class="sourceCode R">
+<span class="fu"><a href="reference/imc.html">imc</a></span><span class="op">(</span>masse <span class="op">=</span> <span class="fl">72</span>, taille <span class="op">=</span> <span class="fl">1.84</span><span class="op">)</span>
+<span class="co">#&gt; [1] 21.26654</span></code></pre></div>
+<p>En utilisant le jeu de données <code>df_lospa</code> disponible avec le package</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">cars</span><span class="op">)</span>
-<span class="co">#&gt;      speed           dist       </span>
-<span class="co">#&gt;  Min.   : 4.0   Min.   :  2.00  </span>
-<span class="co">#&gt;  1st Qu.:12.0   1st Qu.: 26.00  </span>
-<span class="co">#&gt;  Median :15.0   Median : 36.00  </span>
-<span class="co">#&gt;  Mean   :15.4   Mean   : 42.98  </span>
-<span class="co">#&gt;  3rd Qu.:19.0   3rd Qu.: 56.00  </span>
-<span class="co">#&gt;  Max.   :25.0   Max.   :120.00</span></code></pre></div>
-<p>You’ll still need to render <code>README.Rmd</code> regularly, to keep <code>README.md</code> up-to-date.</p>
-<p>You can also embed plots, for example:</p>
-<p><img src="reference/figures/README-pressure-1.png" width="100%"></p>
-<p>In that case, don’t forget to commit and push the resulting figure files, so they display on GitHub!</p>
+<code class="sourceCode R">
+<span class="va">df_lospa</span> <span class="op">%&gt;%</span> <span class="fu">rowwise</span><span class="op">(</span><span class="op">)</span> <span class="op">%&gt;%</span> <span class="fu">mutate</span><span class="op">(</span>IMC <span class="op">=</span> <span class="fu"><a href="reference/imc.html">imc</a></span><span class="op">(</span>masse <span class="op">=</span> <span class="va">masse</span>, taille <span class="op">=</span> <span class="va">taille</span><span class="op">)</span><span class="op">)</span>
+<span class="co">#&gt; # A tibble: 7 x 3</span>
+<span class="co">#&gt; # Rowwise: </span>
+<span class="co">#&gt;   masse taille   IMC</span>
+<span class="co">#&gt;   &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt;</span>
+<span class="co">#&gt; 1    72   1.82  21.7</span>
+<span class="co">#&gt; 2    75   1.88  21.2</span>
+<span class="co">#&gt; 3    80   1.9   22.2</span>
+<span class="co">#&gt; 4    65   1.56  26.7</span>
+<span class="co">#&gt; 5    99   1.78  31.2</span>
+<span class="co">#&gt; 6    56   1.65  20.6</span>
+<span class="co">#&gt; 7    73   1.7   25.3</span></code></pre></div>
+</div>
+<div id="multi_import_excel" class="section level2">
+<h2 class="hasAnchor">
+<a href="#multi_import_excel" class="anchor"></a><code>multi_import_excel()</code>
+</h2>
+<p>Une fonction qui prend en paramètre un seul fichier de format ‘xlsx’ et retourne un objet de format list contenant les différents tableaux de chacun des onglets du fichier.<br>
+La fonction est résistante aux onglets corrompus d’un fichier excel via un <code>safely()</code> au sein de la fonction.<br>
+De ce fait la sortie de la fonction est une liste constituée des éléments <code>data</code> et <code>error</code>.<br>
+Pour accéder aux données, choisir l’élément <code>data</code>.</p>
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<code class="sourceCode R">
+
+<span class="va">tmp</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/multi_import_excel.html">multi_import_excel</a></span><span class="op">(</span>file <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html">system.file</a></span><span class="op">(</span><span class="st">"extdata"</span>,<span class="st">"datasets.xlsx"</span>,package <span class="op">=</span> <span class="st">"laurentspanu"</span><span class="op">)</span><span class="op">)</span>
+
+<span class="va">df</span> <span class="op">&lt;-</span> <span class="va">tmp</span><span class="op">$</span><span class="va">data</span>  <span class="op">%&gt;%</span> <span class="fu">map</span><span class="op">(</span><span class="va">dim</span><span class="op">)</span>
+
+<span class="va">df</span>
+<span class="co">#&gt; $diamant</span>
+<span class="co">#&gt; [1] 50 10</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; $voiture</span>
+<span class="co">#&gt; [1] 50  2</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; $fleur</span>
+<span class="co">#&gt; [1] 25  5</span></code></pre></div>
 </div>
 </div>
   </div>
