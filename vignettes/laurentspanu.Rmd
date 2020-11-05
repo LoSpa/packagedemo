@@ -46,12 +46,16 @@ imc(masse = 72, taille = 1.84)
 
 ## `multi_import_excel()`
 
-Une fonction qui prend en paramètre un seul fichier de format ‘xlsx’ et retourne un objet de format list contenant les différents tableaux de chacun des onglets du fichier
+Une fonction qui prend en paramètre un seul fichier de format ‘xlsx’ et retourne un objet de format list contenant les différents tableaux de chacun des onglets du fichier.  
+La fonction est résistante aux onglets corrompus d’un fichier excel via un `safely()` au sein de la fonction.  
+De ce fait la sortie de la fonction est une liste constituée des éléments `data` et `error`.  
+Pour accéder aux données, choisir l'élément `data`.
 
 ```{r}
 
- multi_import_excel(file = system.file("extdata","datasets.xlsx",package = "laurentspanu")) %>% 
-   map(dim)
+tmp <- multi_import_excel(file = system.file("extdata","datasets.xlsx",package = "laurentspanu"))
+
+df <- tmp$data  %>% map(dim)
 
 
 ```

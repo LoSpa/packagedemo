@@ -22,3 +22,10 @@ usethis::use_vignette("multi_import_excel")
 
 usethis::use_test("imc")
 usethis::use_test("multi_import_excel")
+
+usethis::use_data_raw(name = "df_lospa")
+
+devtools::build_vignettes()
+devtools::document()
+
+pkgdown::build_site()

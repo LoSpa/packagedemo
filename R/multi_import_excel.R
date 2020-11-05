@@ -18,15 +18,22 @@ assertthat::has_extension(path = file, ext = "xlsx")
   sheet_n <- excel_sheets(path = file)
 
   # map
-  list_xls <- map(sheet_n, .f = ~ {
-    read_excel(file, sheet = .x)
+  list_fct <- function(sheet_n, list) {
+    map(sheet_n, .f = ~ {
+     read_excel(list, sheet = .x)})
 
+  }
+  # safe function
+ safe_list_fct <- safely(list_fct)
 
-  })
+ # data handling...
+  list_xls <- safe_list_fct(sheet_n = sheet_n, list = file)
+
   # rename
-  names(list_xls) <- sheet_n
+  names(list_xls$result) <- sheet_n
 
-  return(list_xls)
+
+  return(list(data = list_xls$result, error =  list_xls$error))
 
 
 

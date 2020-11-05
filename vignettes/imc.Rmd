@@ -16,6 +16,7 @@ knitr::opts_chunk$set(
 
 ```{r setup}
 library(laurentspanu)
+library(dplyr)
 ```
 
 Fonction qui prend deux paramètres en entrée :  
@@ -31,6 +32,13 @@ imc(masse = 72, taille = 1.84)
 
 
 
+
+```
+
+En utilisant le jeu de données `df_lospa` disponible avec le package 
+```{r}
+
+df_lospa %>% rowwise() %>% mutate(IMC = imc(masse = masse, taille = taille))
 
 ```
 

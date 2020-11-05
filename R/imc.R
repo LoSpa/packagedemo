@@ -17,7 +17,7 @@ imc <-  function(masse, taille) {
   assertthat::assert_that(is.numeric(taille))
 
   if (taille > 2.0) {
-    message("La taille doit être exprimée en m et non en cm")
+    message("La taille doit etre exprimee en m et non en cm")
   }
 
   imc <- masse / (taille ^2)

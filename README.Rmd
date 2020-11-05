@@ -15,40 +15,57 @@ knitr::opts_chunk$set(
 
 # laurentspanu
 
+```{r example}
+library(laurentspanu)
+library(tidyverse)
+
+```
 <!-- badges: start -->
 <!-- badges: end -->
 
-The goal of laurentspanu is to ...
+Le but de {laurentspanu} est de ...
 
-## Installation
+## Exemple
 
-You can install the released version of laurentspanu from [CRAN](https://CRAN.R-project.org) with:
+Ce package propose deux fonctions :
 
-``` r
-install.packages("laurentspanu")
+* `imc()`
+* `multi_import_excel()`
+
+## `imc()`
+
+Fonction qui a pour but de calculer l'IMC qui correspond à une valeur numérique.
+```{r }
+
+imc(masse = 72, taille = 1.84)
+
 ```
 
-## Example
+En utilisant le jeu de données `df_lospa` disponible avec le package 
+```{r}
 
-This is a basic example which shows you how to solve a common problem:
+df_lospa %>% rowwise() %>% mutate(IMC = imc(masse = masse, taille = taille))
 
-```{r example}
-library(laurentspanu)
-## basic example code
 ```
 
-What is special about using `README.Rmd` instead of just `README.md`? You can include R chunks like so:
+## `multi_import_excel()`
 
-```{r cars}
-summary(cars)
+Une fonction qui prend en paramètre un seul fichier de format ‘xlsx’ et retourne un objet de format list contenant les différents tableaux de chacun des onglets du fichier.  
+La fonction est résistante aux onglets corrompus d’un fichier excel via un `safely()` au sein de la fonction.  
+De ce fait la sortie de la fonction est une liste constituée des éléments `data` et `error`.  
+Pour accéder aux données, choisir l'élément `data`.
+
+```{r }
+
+
+tmp <- multi_import_excel(file = system.file("extdata","datasets.xlsx",package = "laurentspanu"))
+
+df <- tmp$data  %>% map(dim)
+
+df
+
 ```
 
-You'll still need to render `README.Rmd` regularly, to keep `README.md` up-to-date.
 
-You can also embed plots, for example:
 
-```{r pressure, echo = FALSE}
-plot(pressure)
-```
 
-In that case, don't forget to commit and push the resulting figure files, so they display on GitHub!
