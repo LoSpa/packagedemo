@@ -3,10 +3,6 @@
 
 # laurentspanu
 
-<!-- badges: start -->
-
-<!-- badges: end -->
-
 The goal of laurentspanu is to …
 
 ## Installation

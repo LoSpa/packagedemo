@@ -3,5 +3,7 @@
 export(imc)
 export(multi_import_excel)
 import(assertthat)
+import(dplyr)
+import(purrr)
 import(readxl)
 importFrom(assertthat,assert_that)

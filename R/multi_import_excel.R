@@ -6,13 +6,13 @@
 #'
 #' @return une liste
 #' @export
-#' @import assertthat readxl
+#' @import assertthat readxl dplyr purrr
 #' @examples
 #'
 multi_import_excel <-  function(file) {
 
-assert_that(is.character(file))
-has_extension(path = file, ext = "xlsx")
+assertthat::assert_that(is.character(file))
+assertthat::has_extension(path = file, ext = "xlsx")
 
   # Sheet
   sheet_n <- excel_sheets(path = file)

@@ -19,7 +19,9 @@ Imports:
     dplyr,
     rmarkdown
 Suggests: 
-    knitr
+    knitr,
+    testthat,
+    dplyr
 VignetteBuilder: 
     knitr
 Encoding: UTF-8

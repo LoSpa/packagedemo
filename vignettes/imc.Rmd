@@ -1,0 +1,36 @@
+---
+title: "imc"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{imc}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(laurentspanu)
+```
+
+Fonction qui prend deux paramètres en entrée :  
+
+* taille en mètre
+* masse en kg
+
+Le résultat obtenu est l'IMC qui correspond à une valeur numérique
+
+```{r}
+
+imc(masse = 72, taille = 1.84)
+
+
+
+
+```
+

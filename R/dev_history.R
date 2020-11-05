@@ -17,4 +17,8 @@ usethis::use_package("purrr")
 usethis::use_package("dplyr")
 usethis::use_package("rmarkdown")
 
+usethis::use_vignette("imc")
+usethis::use_vignette("multi_import_excel")
 
+usethis::use_test("imc")
+usethis::use_test("multi_import_excel")
