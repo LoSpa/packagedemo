@@ -8,3 +8,5 @@ usethis::use_gpl3_license("lospa_ISSeP") #usethis::use_mit_license("ISSeP")
 usethis::use_vignette("laurentspanu")
 
 usethis::use_git()
+
+usethis::use_readme_rmd()
