@@ -17,6 +17,8 @@ knitr::opts_chunk$set(
 
 ```{r setup}
 library(laurentspanu)
+library(tidyverse)
+
 ```
 
 
@@ -24,8 +26,8 @@ Une fonction qui prend en paramètre un seul fichier de format ‘xlsx’ et ret
 
 ```{r}
 
-# multi_import_excel(file = system.file("extdata","datasets.xlsx",package = "laurentspanu")) %>% 
-#   map(dim)
+ multi_import_excel(file = system.file("extdata","datasets.xlsx",package = "laurentspanu")) %>% 
+   map(dim)
 
 
 ```

@@ -17,31 +17,3 @@ knitr::opts_chunk$set(
 ```{r setup}
 library(laurentspanu)
 ```
-
-
-# Fonction A
-
-## `imc()`
-
-La fonction doit prendre 2 paramètres, la masse en kg et la taille en mètre. Elle retourne le résultat de l’opération.
-
-```{r}
-
-imc(masse = 80, taille = 1.80)
-
-
-
-```
-
-# Fonction B
-
-## `multi_import_excel()` 
-
-Une fonction qui prend en paramètre un seul fichier de format ‘xlsx’ et retourne un objet de format list contenant les différents tableaux de chacun des onglets du fichier
-
-```{r}
-# multi_import_excel(file = system.file("extdata","datasets.xlsx",package = "laurentspanu")) %>% 
-#   map(dim)
-
-```
-

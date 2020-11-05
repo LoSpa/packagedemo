@@ -8,7 +8,7 @@
 #' @export
 #' @import assertthat readxl dplyr purrr
 #' @examples
-#'
+#' multi_import_excel(file = system.file("extdata","datasets.xlsx",package = "laurentspanu"))
 multi_import_excel <-  function(file) {
 
 assertthat::assert_that(is.character(file))
