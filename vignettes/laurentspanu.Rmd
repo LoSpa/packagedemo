@@ -16,4 +16,42 @@ knitr::opts_chunk$set(
 
 ```{r setup}
 library(laurentspanu)
+library(tidyverse)
+```
+
+
+Package qui propose deux fonctions :
+
+* `imc()`
+* `multi_import_excel()`
+
+## `imc()`
+
+Fonction qui prend deux paramètres en entrée :  
+
+* taille en mètre
+* masse en kg
+
+Le résultat obtenu est l'IMC qui correspond à une valeur numérique
+```{r}
+
+
+imc(masse = 72, taille = 1.84)
+
+
+
+
+
+```
+
+## `multi_import_excel()`
+
+Une fonction qui prend en paramètre un seul fichier de format ‘xlsx’ et retourne un objet de format list contenant les différents tableaux de chacun des onglets du fichier
+
+```{r}
+
+ multi_import_excel(file = system.file("extdata","datasets.xlsx",package = "laurentspanu")) %>% 
+   map(dim)
+
+
 ```
