@@ -10,3 +10,9 @@ usethis::use_vignette("laurentspanu")
 usethis::use_git()
 
 usethis::use_readme_rmd()
+
+usethis::use_package("assertthat")
+usethis::use_package("readxl")
+usethis::use_package("purrr")
+usethis::use_package("dplyr")
+

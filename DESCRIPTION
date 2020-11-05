@@ -18,3 +18,8 @@ Suggests:
     knitr,
     rmarkdown
 VignetteBuilder: knitr
+Imports: 
+    assertthat,
+    readxl,
+    purrr,
+    dplyr

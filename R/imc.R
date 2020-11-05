@@ -10,6 +10,7 @@
 #' @importFrom assertthat assert_that
 #' @examples
 #' imc(72, 1.82)
+#'
 imc <-  function(masse, taille) {
 
   assertthat::assert_that(is.numeric(masse))
