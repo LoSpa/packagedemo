@@ -57,5 +57,7 @@ tmp <- multi_import_excel(file = system.file("extdata","datasets.xlsx",package =
 
 df <- tmp$data  %>% map(dim)
 
+df
+
 
 ```
