@@ -3,7 +3,7 @@
 \docType{package}
 \name{laurentspanu}
 \alias{laurentspanu}
-\title{laurentspanu : package de deux fonctions}
+\title{Package 'laurentspanu'}
 \description{
 Le package apporte deux fonctions:
 imc et multi_import_excel
@@ -11,5 +11,6 @@ imc et multi_import_excel
 \section{Les fonctions}{
 
 imc() et multi_import_excel
+Ces fonction sont vraiment coolos
 }
 

@@ -1,10 +1,11 @@
-#' laurentspanu : package de deux fonctions
+#' @title Package 'laurentspanu'
 #'
-#' Le package apporte deux fonctions:
+#' @description Le package apporte deux fonctions:
 #' imc et multi_import_excel
 #'
 #' @section Les fonctions:
 #' imc() et multi_import_excel
+#'     Ces fonction sont vraiment coolos
 #'
 #' @docType package
 #' @name laurentspanu
