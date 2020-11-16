@@ -1,0 +1,45 @@
+---
+title: "imc2"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{imc2}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(laurentspanu)
+
+
+```
+
+
+Fonction IMC2 qui prend deux paramètres en entrée :  
+
+* taille en mètre
+* masse en kg
+
+Le résultat obtenu est l'IMC qui correspond à une valeur numérique
+
+```{r}
+
+imc2(masse = 72, taille = 1.84)
+
+
+
+
+```
+
+En utilisant le jeu de données `df_lospa` disponible avec le package 
+```{r}
+
+df_lospa %>% rowwise() %>% mutate(IMC = imc2(masse = masse, taille = taille))
+
+```

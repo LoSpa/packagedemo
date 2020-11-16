@@ -20,7 +20,8 @@ Imports:
     tidyverse
 Suggests: 
     knitr,
-    testthat
+    testthat,
+    rmarkdown
 VignetteBuilder: 
     knitr
 Encoding: UTF-8
