@@ -30,3 +30,5 @@ usethis::use_data_raw(name = "df_lospa")
 devtools::document()
 
 pkgdown::build_site()
+
+usethis::use_r("is_num")
