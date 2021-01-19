@@ -6,11 +6,14 @@
 #' @param taille numeric
 #'
 #' @return a single numeric value
-#' @export
 #' @importFrom assertthat assert_that
-#' @noRd
+#' @export
 #' @examples
-#' imc(72, 1.82)
+#' imc2(72, 1.82)
+#'
+#' \dontrun{
+#' imc2("75", "1.7")
+#' }
 #'
 imc2 <-  function(masse, taille) {
 

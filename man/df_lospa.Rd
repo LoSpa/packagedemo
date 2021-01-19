@@ -5,7 +5,11 @@
 \alias{df_lospa}
 \title{df_lospa df de test}
 \format{
-data.frame
+data.frame de 7 lignes et de 2 variables:
+\describe{
+\item{masse}{masse, en kg}
+\item{taille}{taille, en m}
+}
 }
 \usage{
 df_lospa

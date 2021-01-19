@@ -3,6 +3,7 @@
 \docType{package}
 \name{laurentspanu}
 \alias{laurentspanu}
+\alias{laurentspanu-package}
 \title{Package 'laurentspanu'}
 \description{
 Le package apporte deux fonctions:
@@ -14,3 +15,8 @@ imc() et multi_import_excel
 Ces fonction sont vraiment coolos
 }
 
+\author{
+\strong{Maintainer}: Laurent Spanu \email{l.spanu@issep.be}
+
+}
+\keyword{internal}

@@ -3,12 +3,9 @@
 #'
 #' @param x an integer , numeric
 #' @param y an integer, numeric
-#' @ke
-#' @return
+#' @return bolean
 #' @keywords Internal
-#' @examples
-#' is_num(25, "250")
-#'
+#' @noRd
 is_num <- function(x, y) {
 
   # fonction custom afin de pourvoir la passer à on_failure()

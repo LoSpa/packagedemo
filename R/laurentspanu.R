@@ -9,5 +9,6 @@
 #'
 #' @docType package
 #' @name laurentspanu
+#' @keywords internal
+"_PACKAGE"
 
-NULL

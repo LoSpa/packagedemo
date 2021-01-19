@@ -5,8 +5,12 @@
 #'
 #' @name df_lospa
 #' @docType data
+#' @format data.frame de 7 lignes et de 2 variables:
+#' \describe{
+#'   \item{masse}{masse, en kg}
+#'   \item{taille}{taille, en m}
+#' }
 #' @author Spanu \email{l.spanu@@issep.be}
-#' @format data.frame
 #' @keywords data
 #'
 "df_lospa"
